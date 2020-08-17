@@ -109,7 +109,6 @@ const Player = () => {
           />
           <ProgressBar 
            time={playerState.time} 
-           onSlidingComplete={onSlidingComplete}
            videoRef = {this.videoRef}
           />
           <Text 

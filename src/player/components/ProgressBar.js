@@ -9,6 +9,7 @@ import { Colors } from 'react-native-paper';
 const ProgBar = (props) => {
   const totalSeconds = Number(props.time.mLeft)*60 + Number(props.time.sLeft) + Number(props.time.mPlayed)*60 + Number(props.time.sPlayed);
   const totalSecondsPlayed = Number(props.time.mPlayed)*60 + Number(props.time.sPlayed);
+  // console.log(props.videoRef)
 
   return(
     <View style={styles.container}>
@@ -20,7 +21,7 @@ const ProgBar = (props) => {
         maximumTrackTintColor={Colors.black}
         thumbTintColor={Colors.green500}
         value={totalSecondsPlayed}
-        onSlidingComplete={props.onSlidingComplete}
+        onSlidingComplete={(value) => {props.videoRef.seek(value, 2)}}
       />
     </View>
   )
